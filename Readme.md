@@ -42,9 +42,9 @@ Z tabulky t_GDP_food_price_payroll_comparison je patrné, že zvýšení růstu 
 Naproti tomu vztah mezi růstem HDP a růstem cen potravin z tabulky patrný není a faktory, které ovlivňují jejich pohyb, je potřeba hledat jinde. 
 
 Použité tabulky databáze:
-czechia_payroll
-czechia_payroll_industry_branch
-czechia_price
-czechia_price_category
-countries
+czechia_payroll, 
+czechia_payroll_industry_branch, 
+czechia_price, 
+czechia_price_category, 
+countries,
 economies
