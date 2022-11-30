@@ -1,6 +1,7 @@
 -- Q No 4:
 -- Existuje rok, ve kterém byl meziroční nárůst cen potravin výrazně vyšší než růst mezd (větší než 10 %)?
 
+-- Table for Payrolls:
 CREATE OR REPLACE VIEW v_payroll_change AS 
 	WITH distinct_years AS (
 		SELECT DISTINCT payroll_year, 
@@ -16,7 +17,7 @@ CREATE OR REPLACE VIEW v_payroll_change AS
 	
 SELECT * FROM v_payroll_change;
 
--- Druhá tabulka pro jídlo:
+-- Table for Food Prices:
 
 CREATE OR REPLACE VIEW v_price_change AS 
 WITH t_food_price AS (
@@ -34,7 +35,7 @@ FROM t_food_price;
 SELECT * FROM v_price_change;
 SELECT * FROM v_payroll_change;
 
--- Finální posouzení:
+-- Final assessment:
 
 CREATE OR REPLACE VIEW v_payroll_vs_prices_change_comparison AS 
 SELECT 	vprc.payroll_year, 
