@@ -1,4 +1,4 @@
--- Primární tabulka:
+-- Primary table:
 
 CREATE OR REPLACE VIEW v_prep_payroll AS (
 	SELECT 	payroll_year, 
@@ -17,9 +17,9 @@ CREATE OR REPLACE VIEW  v_prep_price AS (
 			round(avg(value), 2)  AS average_food_price
 	FROM czechia_price cp 
 	WHERE region_code IS NULL 
-	GROUP BY YEAR (date_from),  category_code
+	GROUP BY 	YEAR (date_from),  
+				category_code
 );
-
 
 
 CREATE OR REPLACE TABLE t_pavel_potsch_project_SQL_primary_final AS
@@ -35,7 +35,7 @@ SELECT * FROM t_pavel_potsch_project_sql_primary_final
 ORDER BY payroll_year DESC , industry_branch_code;
 
 
--- Sekundární tabulka:
+-- Secondary table:
 
 CREATE OR REPLACE TABLE t_pavel_potsch_project_SQL_secondary_final AS 
 SELECT 	country, 
@@ -49,6 +49,7 @@ WHERE `year` > 1999 AND country IN (
 	FROM countries c 
 	WHERE continent = 'Europe'
 	)
-ORDER BY country, `year`;	
+ORDER BY country, 
+		`year`;	
 
 SELECT * FROM t_pavel_potsch_project_sql_secondary_final;
